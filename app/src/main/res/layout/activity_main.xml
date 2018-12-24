@@ -12,46 +12,39 @@
     tools:context="com.example.ryanromero.winewithme.MainActivity">
 
     <Button
+        android:id="@+id/barCodeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn"
-        android:text="Scan Barcode or QR code" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvresult"
-        android:textColor="#000"
-        android:layout_marginTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Result will be here"/>
+        android:text="Add A New Wine!" />
 
     <Button
-        android:id="@+id/Inventory"
-        android:layout_width="match_parent"
+        android:id="@+id/showTypeBtn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inventory" />
+        android:text="View Your Selection!" />
 
     <Button
-        android:id="@+id/RecentWine1"
-        android:layout_width="match_parent"
+        android:id="@+id/recent1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine1" />
 
     <Button
-        android:id="@+id/RecentWine2"
+        android:id="@+id/recent2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine2" />
 
     <Button
-        android:id="@+id/RecentWine3"
+        android:id="@+id/recent4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RecentWine4" />
+
+    <Button
+        android:id="@+id/recent3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine3" />
 
-    <Button
-        android:id="@+id/RecentWine4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RecentWine4" />
 </LinearLayout>

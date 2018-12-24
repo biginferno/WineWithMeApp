@@ -18,11 +18,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Debug_MainActivity";
     private final int MY_PERMISSIONS_REQUEST_USE_CAMERA = 0x00AF;
-    public TextView tvresult, wineinfo;
-    private  Button addNewBarCodesButton;
+    public TextView tvresult, wineResult;
+    private  Button addNewBarCodesButton, showType, recent1, recent2, recent3, recent4;
     public static final int REQUEST_CODE = 1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +28,82 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkCameraPermission();
 
-        tvresult = (TextView) findViewById(R.id.tvresult);
 
-        addNewBarCodesButton = (Button) findViewById(R.id.btn);
+
+
+        addNewBarCodesButton = (Button) findViewById(R.id.barCodeBtn);
+        showType = (Button) findViewById(R.id.showTypeBtn);
+        recent1 = (Button) findViewById(R.id.recent1);
+        recent2 = (Button) findViewById(R.id.recent2);
+        recent3 = (Button) findViewById(R.id.recent3);
+        recent4 = (Button) findViewById(R.id.recent4);
 
         addNewBarCodesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        showType.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+        recent3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        recent2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        recent1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        recent3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        recent4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                String upcCode;
@@ -57,8 +126,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG,"Permission has already granted");
             }
         }
-
-
         @Override
         public void onRequestPermissionsResult(int requestCode,
         String permissions[], int[] grantResults) {
