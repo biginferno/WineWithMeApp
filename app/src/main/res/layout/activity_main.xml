@@ -24,25 +24,25 @@
         android:text="View Your Selection!" />
 
     <Button
-        android:id="@+id/recent1"
+        android:id="@+id/mostRecentAdded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine1" />
 
     <Button
-        android:id="@+id/recent2"
+        android:id="@+id/randomOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine2" />
 
     <Button
-        android:id="@+id/recent4"
+        android:id="@+id/randomTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine4" />
 
     <Button
-        android:id="@+id/recent3"
+        android:id="@+id/lastUsed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecentWine3" />

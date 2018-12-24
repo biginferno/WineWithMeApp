@@ -18,22 +18,23 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Debug_MainActivity";
     private final int MY_PERMISSIONS_REQUEST_USE_CAMERA = 0x00AF;
-    public TextView tvresult, wineResult, wineInfo;
-    private  Button addNewBarCodesButton, showType, recent1, recent2, recent3, recent4;
-    public static final int REQUEST_CODE = 1;
 
+    private  Button addNewBarCodesButton, showType, mostRecentAdded, lastUsed, randomOne, randomTwo;
+    public static final int REQUEST_CODE = 1;
+    protected void checkPermissions(){
+        checkCameraPermission();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        checkCameraPermission();
 
         addNewBarCodesButton = (Button) findViewById(R.id.barCodeBtn);
         showType = (Button) findViewById(R.id.showTypeBtn);
-        recent1 = (Button) findViewById(R.id.recent1);
-        recent2 = (Button) findViewById(R.id.recent2);
-        recent3 = (Button) findViewById(R.id.recent3);
-        recent4 = (Button) findViewById(R.id.recent4);
+        mostRecentAdded = (Button) findViewById(R.id.mostRecentAdded);
+        lastUsed = (Button) findViewById(R.id.lastUsed);
+        randomOne = (Button) findViewById(R.id.randomOne);
+        randomTwo = (Button) findViewById(R.id.randomTwo);
 
         addNewBarCodesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +57,19 @@ public class MainActivity extends AppCompatActivity {
 //                upcCode = intent.getDataString();
             }
         });
-        recent3.setOnClickListener(new View.OnClickListener() {
+
+        mostRecentAdded.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String upcCode;
+                Intent intent = new Intent(MainActivity.this, showWine.class);
+                startActivityForResult(intent,REQUEST_CODE);
+//
+//                upcCode = intent.getDataString();
+            }
+        });
+
+        randomOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                String upcCode;
@@ -67,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recent2.setOnClickListener(new View.OnClickListener() {
+        randomTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                String upcCode;
@@ -78,29 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recent1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String upcCode;
-                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
-                startActivityForResult(intent,REQUEST_CODE);
-//
-//                upcCode = intent.getDataString();
-            }
-        });
-
-        recent3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                String upcCode;
-                Intent intent = new Intent(MainActivity.this, ScanActivity.class);
-                startActivityForResult(intent,REQUEST_CODE);
-//
-//                upcCode = intent.getDataString();
-            }
-        });
-
-        recent4.setOnClickListener(new View.OnClickListener() {
+        lastUsed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                String upcCode;
