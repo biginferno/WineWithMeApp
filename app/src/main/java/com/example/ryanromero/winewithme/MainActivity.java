@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkCameraPermission();
 
-
-
-
         addNewBarCodesButton = (Button) findViewById(R.id.barCodeBtn);
         showType = (Button) findViewById(R.id.showTypeBtn);
         recent1 = (Button) findViewById(R.id.recent1);
