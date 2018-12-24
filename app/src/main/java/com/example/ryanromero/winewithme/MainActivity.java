@@ -18,7 +18,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Debug_MainActivity";
     private final int MY_PERMISSIONS_REQUEST_USE_CAMERA = 0x00AF;
-    public TextView tvresult, wineResult;
+    public TextView tvresult, wineResult, wineInfo;
     private  Button addNewBarCodesButton, showType, recent1, recent2, recent3, recent4;
     public static final int REQUEST_CODE = 1;
 
