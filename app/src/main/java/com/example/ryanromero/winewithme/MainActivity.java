@@ -1,6 +1,7 @@
 package com.example.ryanromero.winewithme;
 
 import android.Manifest;
+import android.arch.persistence.room.Room;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -15,20 +16,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import Database.WineWithMeDao;
+import Database.WineWithMeDatabase;
+
 public class MainActivity extends AppCompatActivity {
+    //Room Persistence Database
+    private static final String DATABASE_NAME ="wineWithMe_db";
+    public WineWithMeDatabase winedatabase;
+
+    //Camera Permissions
     private final String TAG = "Debug_MainActivity";
     private final int MY_PERMISSIONS_REQUEST_USE_CAMERA = 0x00AF;
+
 
     private  Button addNewBarCodesButton, showType, mostRecentAdded, lastUsed, randomOne, randomTwo;
     public static final int REQUEST_CODE = 1;
     protected void checkPermissions(){
         checkCameraPermission();
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        winedatabase = Room.databaseBuilder(getApplicationContext(),
+                WineWithMeDatabase.class, DATABASE_NAME)
+                .fallbackToDestructiveMigration()
+                .build();
 
+        checkPermissions();
         addNewBarCodesButton = (Button) findViewById(R.id.barCodeBtn);
         showType = (Button) findViewById(R.id.showTypeBtn);
         mostRecentAdded = (Button) findViewById(R.id.mostRecentAdded);

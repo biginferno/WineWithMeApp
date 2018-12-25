@@ -18,7 +18,7 @@ public class ScanActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
-        //setContentView(R.layout.activity_scan);
+        setContentView(R.layout.activity_show_wine);
     }
 
 
